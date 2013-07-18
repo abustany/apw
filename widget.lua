@@ -15,12 +15,12 @@
 -- along with APW. If not, see <http://www.gnu.org/licenses/>.
 
 -- Configuration variables
-local width         = 40        -- width in pixels of progressbar
+local width         = 5         -- width in pixels of progressbar
 local step          = 0.05      -- stepsize for volume change (ranges from 0 to 1)
-local color         = '#698f1e' -- foreground color of progessbar
-local color_bg      = '#33450f' -- background color
-local color_mute    = '#be2a15' -- foreground color when muted
-local color_bg_mute = '#532a15' -- background color when muted
+local color         = '#fce94f' -- foreground color of progessbar
+local color_bg      = '#222222' -- background color
+local color_mute    = '#888a85' -- foreground color when muted
+local color_bg_mute = '#222222' -- background color when muted
 -- End of configuration
 
 local awful = require("awful")
@@ -31,6 +31,7 @@ local p = pulseaudio:Create()
 local pulseWidget = awful.widget.progressbar()
 
 pulseWidget:set_width(width)
+pulseWidget:set_vertical(true)
 pulseWidget.step = step
 
 function pulseWidget.setColor(mute)
